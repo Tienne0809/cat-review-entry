@@ -1,11 +1,11 @@
+// Cat Reviews Its Human — make.fun bounty entry.
+// The program writes one one-star review line to the output entry file.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// Make the AI Judge Laugh: Cat Reviews — make.fun bounty entry.
-// The program writes one cat-review line to the output entry file.
 const line =
-  `One star. Feeds me, but at HIS convenience, and the belly-rub service ends exactly one second before it should.`;
+  `One star. The human feeds me on his schedule, not mine, and calls my 3 a.m. concerts 'noise.' Service: unacceptable. Ambience: a closed door.`;
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.txt"), line, "utf8");
